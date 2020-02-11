@@ -20,12 +20,21 @@ window.Vue = require('vue');
 //     Vue.component(key.split('/').pop().split('.')[0], files(key).default);
     
 // })
+import VueRouter from 'vue-router'
 
+Vue.use(VueRouter)
 
 // Vue.prototype.axios = require('axios');
 
 Vue.component("login" , require("./components/Login.vue"));
-
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+       
+    ],
+});
 const app = new Vue({
     el: '#app',
+    components: { App },
+    router,
 });
